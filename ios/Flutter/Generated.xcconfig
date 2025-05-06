@@ -1,8 +1,8 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/home/code/snap/flutter/common/flutter
-FLUTTER_APPLICATION_PATH=/home/code/srav/Demo/auio_service_demo
+FLUTTER_ROOT=C:\Users\Administrator\fvm\versions\3.24.4
+FLUTTER_APPLICATION_PATH=C:\Users\Administrator\Desktop\Testing Audio\audio_service_demo
 COCOAPODS_PARALLEL_CODE_SIGN=true
-FLUTTER_TARGET=lib/main.dart
+FLUTTER_TARGET=lib\main.dart
 FLUTTER_BUILD_DIR=build
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1

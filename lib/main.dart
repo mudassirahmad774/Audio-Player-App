@@ -1,24 +1,4 @@
-// ignore_for_file: public_member_api_docs
-
-// FOR MORE EXAMPLES, VISIT THE GITHUB REPOSITORY AT:
-//
-//  https://github.com/ryanheise/audio_service
-//
-// This example implements a minimal audio handler that renders the current
-// media item and playback state to the system notification and responds to 4
-// media actions:
-//
-// - play
-// - pause
-// - seek
-// - stop
-//
-// To run this example, use:
-//
-// flutter run
-
 import 'dart:async';
-
 import 'package:audio_service/audio_service.dart';
 import 'package:audio_service_example/common.dart';
 import 'package:flutter/foundation.dart';
@@ -26,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
 
-// You might want to provide this using dependency injection rather than a
-// global variable.
 late AudioHandler _audioHandler;
 
 Future<void> main() async {
@@ -48,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Audio Service Demo',
+      title: 'Audio Service App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const MainScreen(),
     );
@@ -62,7 +40,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Audio Service Demo'),
+        title: const Text('Audio Service App'),
       ),
       body: Center(
         child: Column(
@@ -121,7 +99,7 @@ class MainScreen extends StatelessWidget {
                     snapshot.data ?? AudioProcessingState.idle;
                 return Text(
                     // ignore: deprecated_member_use
-                    "Processing state: ${describeEnum(processingState)}");
+                    "Processing state --> ${describeEnum(processingState)}");
               },
             ),
           ],
@@ -130,8 +108,6 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  /// A stream reporting the combined state of the current media item and its
-  /// current position.
   Stream<MediaState> get _mediaStateStream =>
       Rx.combineLatest2<MediaItem?, Duration, MediaState>(
           _audioHandler.mediaItem,
